@@ -20,7 +20,7 @@
 
 ```
 Frontend: honeypot-ui.vercel.app
-Backend:  [agentic-honey-pot-api-endpoint.onrender.com](https://agentic-honey-pot-api-endpoint.onrender.com)
+Backend:  https://agentic-honey-pot-api-endpoint.onrender.com
 ```
 
 ---
