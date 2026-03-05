@@ -19,7 +19,7 @@
 > Type as a scammer. Watch Sarthak stall, confuse, and extract intelligence — all in real time.
 
 ```
-Frontend: honeypot-ui.vercel.app
+Frontend: https://honeypot-ui-two.vercel.app/
 Backend:  https://agentic-honey-pot-api-endpoint.onrender.com
 ```
 
