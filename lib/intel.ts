@@ -30,8 +30,8 @@ export function emptyIntel(): Intel {
 export function extractIntel(text: string): Intel {
   if (!text) return emptyIntel()
 
-  const emailAddresses = text.match(/\b[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}\b/g) || []
-  const rawUpi = text.match(/\b[\w.\-+]+@[a-zA-Z0-9]+\b/g) || []
+  const emailAddresses: string[] = text.match(/\b[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}\b/g) || []
+  const rawUpi: string[] = text.match(/\b[\w.\-+]+@[a-zA-Z0-9]+\b/g) || []
   const upiIds = rawUpi.filter(u => !emailAddresses.includes(u))
 
   return {
@@ -49,7 +49,7 @@ export function extractIntel(text: string): Intel {
 export function mergeIntel(base: Intel, incoming: Intel): Intel {
   const merged = { ...base }
   ;(Object.keys(base) as (keyof Intel)[]).forEach(k => {
-    merged[k] = [...new Set([...base[k], ...incoming[k]])] as string[]
+    merged[k] = Array.from(new Set([...base[k], ...incoming[k]])) as string[]
   })
   return merged
 }
